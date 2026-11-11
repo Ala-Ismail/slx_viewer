@@ -1,0 +1,3 @@
+In this research work mainly concentrate to develop intelligent control based grid integration of hybrid PV-Wind power system along with battery storage system. The grid integration hybrid PV – Wind along with intelligent controller based battery management system [BMS] has been developed a simulation model in Matlab and analysis the system performance under normal condition. The same system has been simulated with UPFC and analysed the system performance under different fault condition.
+
+https://www.youtube.com/watch?v=NbzBKOErcIE

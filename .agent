@@ -1,0 +1,32 @@
+# 1. SLX Viewer Agent Instructions
+
+## 1.1 Source of truth
+
+Read `slx_viewer_design.md` before implementation. Keep it synchronized with accepted requirements. Use numbered Markdown sections (1.x and 1.x.y) in project documentation.
+
+## 1.2 Product scope
+
+Build a lightweight standalone Rust application with egui/eframe, initially for Windows x64. This is strictly a read-only SLX viewer. Do not add model editing, saving, simulation, compilation, or MATLAB/script execution. Show stored expressions without evaluating them.
+
+## 1.3 Required controls
+
+- Ctrl + wheel zooms around the pointer, clamped to 10%-800%.
+- Middle-button drag and left drag on empty background pan.
+- Double-click or Enter on an available subsystem opens its diagram.
+- Esc goes to the parent and does nothing at root. Dialogs, menus, popups, and active text interactions consume Esc first.
+- Preserve per-system viewport state; distinguish parent navigation from Back history.
+- Keep a resizable model hierarchy tree in the left panel, synchronized with the current system and navigation; see design section 1.7.3.
+
+## 1.4 Architecture
+
+Separate archive access, parsing, immutable model data, geometry, and UI. Use cancellable background loading and ignore stale results. Preserve saved placement and connectivity. Show diagnostics for unsupported content. Bound archive/XML processing and never modify input models or execute embedded code.
+
+## 1.5 Validation
+
+Follow design section 1.10 for test criteria and evidence. Add meaningful tests for parsing, transforms, navigation, worker ordering, and read-only behavior as those features are implemented. Use real saved SLX fixtures for compatibility claims, not synthetic archives alone.
+
+Once Cargo exists, run formatting, Clippy, relevant tests, and a locked release build as specified in the design. Report passed, failed, and unexecuted checks honestly. Do not describe planned tests as completed validation.
+
+## 1.6 Delivery
+
+Follow the design milestones within the user's requested scope. Commit Cargo.lock when dependency setup begins. Document compatibility limitations and measured performance. Do not claim supported releases or performance targets without evidence.

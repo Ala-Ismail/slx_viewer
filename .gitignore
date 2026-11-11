@@ -1,0 +1,27 @@
+# Rust build output
+/target/
+
+# Local models; retain only the accepted saved reference corpus
+*.slx
+!/tests/fixtures/dc_motor_speed_control.slx
+!/tests/fixtures/microgrid/**/*.slx
+!/tests/fixtures/microgrid/*.slx
+
+# Editor and operating-system files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local settings, credentials, logs, and Python caches
+.env
+.env.*
+!.env.example
+*.log
+__pycache__/
+*.py[cod]
+.venv/

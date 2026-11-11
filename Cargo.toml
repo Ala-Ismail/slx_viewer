@@ -1,0 +1,25 @@
+[package]
+name = "slx_viewer"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+default-run = "slx_viewer_desktop"
+
+[dependencies]
+quick-xml = "0.41.0"
+thiserror = "2.0.21"
+zip = { version = "3.0.0", default-features = false, features = ["deflate-flate2-zlib-rs"] }
+
+[dev-dependencies]
+sha2 = "0.10.9"
+tempfile = "3.27.0"
+
+[target.'cfg(windows)'.dependencies]
+eframe = { version = "0.36.2", default-features = false, features = ["default_fonts", "glow"] }
+rfd = { version = "0.17.2", default-features = false }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+tempfile = "3.27.0"
+
+[build-dependencies]
+time = { version = "0.3.55", default-features = false, features = ["std", "formatting"] }
