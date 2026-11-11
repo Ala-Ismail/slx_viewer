@@ -25,6 +25,21 @@ The tested navigation and status-bar layout build is available at `target\releas
 
 Dependency and font notices are embedded in the executable and shown under **Help > License…**. After updating `Cargo.lock`, regenerate them with `python tools/update_notices.py` before building. The generator uses cached dependency sources and the upstream license copies in `notices`.
 
+### 1.2.2 Download a GitHub build
+
+The **Windows build** workflow runs on pushes to `main`, pull requests, version tags (`v*`), and manual dispatch. It checks formatting, Clippy, and tests before building Windows x64 release executables with the locked dependencies.
+
+Open the repository's **Actions > Windows build**, select a successful run, and download **slx_viewer-windows-x64** under **Artifacts**. Extract the downloaded artifact, then extract `slx_viewer-windows-x64.zip` and launch `slx_viewer_desktop.exe`. The package also contains the command-line executable, README, license, third-party notices, and a separate ZIP checksum. Artifacts are retained for 14 days. GitHub sign-in and access to this private repository are required.
+
+For a persistent versioned download, push a version tag after updating the Cargo package version and lockfile as appropriate:
+
+```powershell
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+A successful tagged build creates a GitHub Release with the ZIP and SHA-256 checksum under **Releases > Assets**. Downloads remain restricted while the repository is private. No personal access token secret is needed; the release job uses GitHub's automatic token with permission to write repository contents. The workflow does not perform native GUI or clean-machine acceptance testing.
+
 ## 1.3 Open a model
 
 Double-click `slx_viewer_desktop.exe`. The app opens to an empty window. Choose **File > Open…** or press **Ctrl+O**, then select a local `.slx` file. To try the viewer, select `tests\fixtures\dc_motor_speed_control.slx` from the repository. You can also drop a model on the window, or provide a path when launching the app.
