@@ -1,5 +1,13 @@
 # 1. SLX Viewer
 
+**Windows executable downloads:** [Build downloads](https://github.com/Ala-Ismail/slx_viewer/actions/workflows/windows.yml) | [Versioned releases](https://github.com/Ala-Ismail/slx_viewer/releases)
+
+For a build download, select a successful run and download **slx_viewer-windows-x64** under **Artifacts**. Extract the artifact and the ZIP inside it, then run `slx_viewer_desktop.exe`. The initial build is still running; no versioned release has been published yet.
+
+After the first tagged release is published, use [Download the latest Windows x64 executable package](https://github.com/Ala-Ismail/slx_viewer/releases/latest/download/slx_viewer-windows-x64.zip). This link becomes available when that release contains the ZIP asset.
+
+Downloads require repository access while this repository is private. Public release downloads require a public repository, or the binaries can be distributed separately.
+
 ## 1.1 Overview
 
 This project is a distilled implementation of an SLX viewer. It is an independent project and is not affiliated with MATLAB or MathWorks.
